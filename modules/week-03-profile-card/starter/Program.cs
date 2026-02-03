@@ -10,16 +10,40 @@ public class Program
 
         // TODO: Collect PERSONAL INFORMATION (strings)
         // - Full name
+        Console.WriteLine("Enter your full name: ");
+        string fullName = Console.ReadLine();
+
         // - Hometown (city, state)
+        Console.WriteLine("Enter your hometown (city, state): ");
+        string homeTown = Console.ReadLine();
+
         // - Favorite color
+        Console.WriteLine("Enter your favorite color: ");
+        string favColor = Console.ReadLine();
+
         // - Dream job
+        Console.WriteLine("Enter your dream job: ");
+        string dreamJob = Console.ReadLine();
+
         // Hint: string variableName = Console.ReadLine();
 
         // TODO: Collect ACADEMIC INFORMATION
         // - Major (string)
+        Console.WriteLine("Enter your major: ");
+        string major = Console.ReadLine();
+
         // - GPA (double, 0.0-4.0)
+        Console.WriteLine("Enter your GPA (0.0 - 4.0): ");
+        double gpa = double.Parse(Console.ReadLine());
+
         // - Graduation year (int)
+        Console.WriteLine("Enter your graduation year: ");
+        int gradYear = int.Parse(Console.ReadLine());
+
         // - Is full-time student? (bool from yes/no)
+        Console.WriteLine("Are you a full-time student? (yes/no): ");
+        bool isFullTime = Console.ReadLine().ToLower() == "yes" || Console.ReadLine().ToLower() == "y";
+        
         // Hint: double gpa = double.Parse(Console.ReadLine());
         // Hint: bool isFullTime = answer.ToLower() == "yes";
 
