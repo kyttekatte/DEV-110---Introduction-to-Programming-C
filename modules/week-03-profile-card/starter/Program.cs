@@ -1,3 +1,7 @@
+using System.Data;
+using System.Diagnostics;
+using System.Reflection.Emit;
+
 namespace ProfileCard;
 
 public class Program
@@ -43,14 +47,22 @@ public class Program
         // - Is full-time student? (bool from yes/no)
         Console.WriteLine("Are you a full-time student? (yes/no): ");
         bool isFullTime = Console.ReadLine().ToLower() == "yes" || Console.ReadLine().ToLower() == "y";
-        
+
         // Hint: double gpa = double.Parse(Console.ReadLine());
         // Hint: bool isFullTime = answer.ToLower() == "yes";
 
         // TODO: Collect ADDITIONAL DETAILS
         // - Age (int)
+        Console.WriteLine("Enter your age: ");
+        int age = int.Parse(Console.ReadLine());
+
         // - Height in inches (double)
+        Console.WriteLine("Enter your height in inches: ");
+        double heightInches = double.Parse(Console.ReadLine());
+
         // - Favorite number (int)
+        Console.WriteLine("Enter your favorite number: ");
+        int favNumber = int.Parse(Console.ReadLine());
 
         // TODO: CALCULATE derived information
         // - Birth year = 2026 - age
@@ -62,6 +74,16 @@ public class Program
         // TODO: DISPLAY formatted profile card
         // Use sections with headers:
         // - PERSONAL INFORMATION
+        Console.WriteLine("\n═══════════════════════════════════════════");
+        Console.WriteLine("PERSONAL INFORMATION");
+        Console.WriteLine($"Name: {fullName}");
+        Console.WriteLine($"Age: {age}");
+        Console.WriteLine($"Height: {heightInches} inches");
+        Console.WriteLine($"Hometown: {homeTown}");
+        Console.WriteLine($"Favorite Color: {favColor}");
+        Console.WriteLine($"Favorite Number: {favNumber}");
+        Console.WriteLine($"Dream Job: {dreamJob}");
+
         // - ACADEMIC DETAILS
         // - CALCULATED STATISTICS
         // Use proper alignment and formatting
