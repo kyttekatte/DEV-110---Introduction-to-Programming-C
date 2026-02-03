@@ -66,10 +66,20 @@ public class Program
 
         // TODO: CALCULATE derived information
         // - Birth year = 2026 - age
+        int birthYear = 2026 - age;
+
         // - Years to graduation = graduationYear - 2026
+        int yearsToGraduation = gradYear - 2026;
+
         // - Height in feet and inches: feet = heightInches / 12, inches = heightInches % 12
+        int heightFeet = (int)(heightInches / 12);
+        double remainingInches = heightInches % 12;
+
         // - Is honor student? = gpa >= 3.5
+        bool isHonorStudent = gpa >= 3.5;
+
         // - Age in months = age * 12
+        int ageMonths = age * 12;
 
         // TODO: DISPLAY formatted profile card
         // Use sections with headers:
@@ -85,9 +95,25 @@ public class Program
         Console.WriteLine($"Dream Job: {dreamJob}");
 
         // - ACADEMIC DETAILS
+        Console.WriteLine("\n═══════════════════════════════════════════");
+        Console.WriteLine("ACADEMIC DETAILS");
+        Console.WriteLine("═══════════════════════════════════════════");
+        Console.WriteLine($"Major: {major}");
+        Console.WriteLine($"GPA: {gpa:F2}");
+        Console.WriteLine($"Graduation Year: {gradYear}");
+        Console.WriteLine($"Full-Time Student: {(isFullTime ? "Yes" : "No")}");
+        Console.WriteLine($"Honor Student: {(isHonorStudent ? "Yes" : "No")}");
+
         // - CALCULATED STATISTICS
         // Use proper alignment and formatting
-        Console.WriteLine("\n═══════════════════════════════════════════");
+        Console.WriteLine("\n===========================================");
+        Console.WriteLine("CALCULATED STATISTICS");
+        Console.WriteLine("===========================================");
+        Console.WriteLine($"Birth Year: {birthYear}");
+        Console.WriteLine($"Years to Graduation: {yearsToGraduation}");
+        Console.WriteLine($"Height in Feet and Inches: {heightFeet} feet {remainingInches:F1} inches");
+        Console.WriteLine($"Age in Months: {ageMonths}");
+
         Console.WriteLine("Profile complete! Good luck with your studies!");
     }
 }
