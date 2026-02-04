@@ -99,7 +99,7 @@ public class Program
         Console.WriteLine($"Dream Job: {dreamJob}");
 
         // - ACADEMIC DETAILS
-       //Console.WriteLine("\n═══════════════════════════════════════════");
+        // Console.WriteLine("\n═══════════════════════════════════════════");
         Console.WriteLine("\nACADEMIC DETAILS");
         Console.WriteLine("═══════════════════");
         Console.WriteLine($"\nMajor: {major}");
@@ -110,7 +110,7 @@ public class Program
 
         // - CALCULATED STATISTICS
         // Use proper alignment and formatting
-        //Console.WriteLine("\n===========================================");
+        // Console.WriteLine("\n===========================================");
         Console.WriteLine("\nCALCULATED STATISTICS");
         Console.WriteLine("======================");
         Console.WriteLine($"\nBirth Year: {birthYear}");
