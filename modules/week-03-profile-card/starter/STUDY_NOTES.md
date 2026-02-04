@@ -1,7 +1,6 @@
 # Week 3: Personal Profile Card - Study Notes
 
-**Name:**
-Kytte Burke
+**Name:**  Kytte Burke
 
 ## Understanding Variables and Data Types
 
