@@ -8,9 +8,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("╔════════════════════════════════════════════╗");
-        Console.WriteLine("║         STUDENT PROFILE CARD               ║");
-        Console.WriteLine("╚════════════════════════════════════════════╝\n");
+        Console.WriteLine("Welcome to the Student Profile Card Generator!\n");
+        Console.WriteLine("Please provide the following information:\n");
 
         // TODO: Collect PERSONAL INFORMATION (strings)
         // - Full name
@@ -46,7 +45,8 @@ public class Program
 
         // - Is full-time student? (bool from yes/no)
         Console.WriteLine("Are you a full-time student? (yes/no): ");
-        bool isFullTime = Console.ReadLine().ToLower() == "yes" || Console.ReadLine().ToLower() == "y";
+        string fullTimeInput = Console.ReadLine().ToLower();
+        bool isFullTime = fullTimeInput == "yes" || fullTimeInput == "y";
 
         // Hint: double gpa = double.Parse(Console.ReadLine());
         // Hint: bool isFullTime = answer.ToLower() == "yes";
@@ -83,11 +83,15 @@ public class Program
 
         // TODO: DISPLAY formatted profile card
         // Use sections with headers:
+        Console.WriteLine("╔════════════════════════════════════════════╗");
+        Console.WriteLine("║         STUDENT PROFILE CARD               ║");
+        Console.WriteLine("╚════════════════════════════════════════════╝\n");
+
         // - PERSONAL INFORMATION
-        Console.WriteLine("\n═══════════════════════════════════════════");
         Console.WriteLine("PERSONAL INFORMATION");
-        Console.WriteLine($"Name: {fullName}");
-        Console.WriteLine($"Age: {age}");
+        Console.WriteLine("══════════════════════");
+        Console.WriteLine($"\nName: {fullName}");
+        Console.WriteLine($"Age: {age} years old");
         Console.WriteLine($"Height: {heightInches} inches");
         Console.WriteLine($"Hometown: {homeTown}");
         Console.WriteLine($"Favorite Color: {favColor}");
@@ -95,25 +99,25 @@ public class Program
         Console.WriteLine($"Dream Job: {dreamJob}");
 
         // - ACADEMIC DETAILS
-        Console.WriteLine("\n═══════════════════════════════════════════");
-        Console.WriteLine("ACADEMIC DETAILS");
-        Console.WriteLine("═══════════════════════════════════════════");
-        Console.WriteLine($"Major: {major}");
+       //Console.WriteLine("\n═══════════════════════════════════════════");
+        Console.WriteLine("\nACADEMIC DETAILS");
+        Console.WriteLine("═══════════════════");
+        Console.WriteLine($"\nMajor: {major}");
         Console.WriteLine($"GPA: {gpa:F2}");
-        Console.WriteLine($"Graduation Year: {gradYear}");
-        Console.WriteLine($"Full-Time Student: {(isFullTime ? "Yes" : "No")}");
-        Console.WriteLine($"Honor Student: {(isHonorStudent ? "Yes" : "No")}");
+        Console.WriteLine($"Expected Graduation Year: {gradYear}");
+        Console.WriteLine($"Full-Time Student: {isFullTime}");
+        Console.WriteLine($"Honor Student: {isHonorStudent}");
 
         // - CALCULATED STATISTICS
         // Use proper alignment and formatting
-        Console.WriteLine("\n===========================================");
-        Console.WriteLine("CALCULATED STATISTICS");
-        Console.WriteLine("===========================================");
-        Console.WriteLine($"Birth Year: {birthYear}");
-        Console.WriteLine($"Years to Graduation: {yearsToGraduation}");
+        //Console.WriteLine("\n===========================================");
+        Console.WriteLine("\nCALCULATED STATISTICS");
+        Console.WriteLine("======================");
+        Console.WriteLine($"\nBirth Year: {birthYear}");
+        Console.WriteLine($"Years to Graduation: {yearsToGraduation} years");
         Console.WriteLine($"Height in Feet and Inches: {heightFeet} feet {remainingInches:F1} inches");
-        Console.WriteLine($"Age in Months: {ageMonths}");
+        Console.WriteLine($"Age in Months: {ageMonths} months");
 
-        Console.WriteLine("Profile complete! Good luck with your studies!");
+        Console.WriteLine("\nProfile complete! Good luck with your studies!");
     }
 }
