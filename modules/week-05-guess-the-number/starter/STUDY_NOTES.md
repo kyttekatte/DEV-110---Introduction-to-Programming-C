@@ -1,6 +1,7 @@
 # Week 5: Guess the Number - Study Notes
 
 **Name:**
+Kytte Burke
 
 ## Loop Types
 
