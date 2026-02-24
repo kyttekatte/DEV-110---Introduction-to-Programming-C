@@ -121,20 +121,54 @@ public class Program
 
                     break;
 
-                    // ===== OPTION 3: Print roster (sorted) =====
-                    // TODO 7: If count is 0, print: "Roster is empty."
-                    // Otherwise:
-                    // - Print:
-                    //   Sort by:
-                    //   1) Name
-                    //   2) Credits
-                    // - Get sort choice using ReadIntInRange (range 1-2)
-                    // - Copy only the USED part of the roster into new arrays (CopyUsedRoster - TODO 7.1)
-                    // - Sort:
-                    //   Name: Array.Sort(sortedNames, sortedCredits, StringComparer.OrdinalIgnoreCase)
-                    //   Credits: Array.Sort(sortedCredits, sortedNames)
-                    // - Print header: "Class Roster (Sorted):"
-                    // - Print each line using a foreach loop
+                // ===== OPTION 3: Print roster (sorted) =====
+                // TODO 7: If count is 0, print: "Roster is empty."
+                // Otherwise:
+                // - Print:
+                //   Sort by:
+                //   1) Name
+                //   2) Credits
+                // - Get sort choice using ReadIntInRange (range 1-2)
+                // - Copy only the USED part of the roster into new arrays (CopyUsedRoster - TODO 7.1)
+                // - Sort:
+                //   Name: Array.Sort(sortedNames, sortedCredits, StringComparer.OrdinalIgnoreCase)
+                //   Credits: Array.Sort(sortedCredits, sortedNames)
+                // - Print header: "Class Roster (Sorted):"
+                // - Print each line using a foreach loop
+                case 3:
+                    if (count == 0)
+                    {
+                        Console.WriteLine("Roster is empty.\n");
+                        break;
+                    }
+
+                    Console.WriteLine("Sort by:");
+                    Console.WriteLine("1) Name");
+                    Console.WriteLine("2) Credits");
+
+                    int sortChoice = ReadIntInRange("Choose an option: ", 1, 2);
+
+                    string[] sortedNames;
+                    int[] sortedCredits;
+                    CopyUsedRoster(rosterNames, rosterCredits, count, out sortedNames, out sortedCredits);
+
+                    if (sortChoice == 1)
+                    {
+                        Array.Sort(sortedNames, sortedCredits, StringComparer.OrdinalIgnoreCase);
+                    }
+                    else
+                    {
+                        Array.Sort(sortedCredits, sortedNames);
+                    }
+
+                    Console.WriteLine("Class Roster (Sorted):");
+                    string[] sortedLines = BuildRosterLines(sortedNames, sortedCredits, count);
+                    foreach (string line in sortedLines)
+                    {
+                        Console.WriteLine(line);
+                    }
+
+                    break;
 
                     // ===== OPTION 4: Exit =====
                     // TODO 8: When the user chooses 4, print: "Goodbye." and end the program
@@ -185,12 +219,17 @@ public class Program
         out string[] names,
         out int[] credits)
     {
-        // TODO 7.1: Copy only the USED roster values into new arrays
+        // Copy only the USED roster values into new arrays
         // - Create names and credits arrays sized to count
         // - Use a for loop to copy each used element
 
-        names = new string[0];
-        credits = new int[0];
+        names = new string[count];
+        credits = new int[count];
+        for (int i = 0; i < count; i++)
+        {
+            names[i] = sourceNames[i];
+            credits[i] = sourceCredits[i];
+        }
     }
 }
 
