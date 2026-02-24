@@ -51,7 +51,6 @@ public class Program
             // Use a switch statement to handle choices 1-4
             switch (choice)
             {
-
                 // ===== OPTION 1: Add multiple students =====
                 // If the roster is full (count == rosterCapacity), print:
                 // "Roster is full. Cannot add more students."
@@ -70,7 +69,7 @@ public class Program
                 case 1:
                     if (count == rosterCapacity)
                     {
-                        Console.WriteLine("Roster is full. Cannot add more students.\n");
+                        Console.WriteLine("Roster is full. Cannot add more students.");
                         break;
                     }
 
@@ -95,7 +94,7 @@ public class Program
                         count++;
                     }
 
-                    Console.WriteLine("Students added.\n");
+                    Console.WriteLine("Students added.");
                     break;
 
                 // ===== OPTION 2: Print class roster =====
@@ -107,7 +106,7 @@ public class Program
                 case 2:
                     if (count == 0)
                     {
-                        Console.WriteLine("Roster is empty.\n");
+                        Console.WriteLine("Roster is empty.");
                         break;
                     }
 
@@ -122,7 +121,7 @@ public class Program
                     break;
 
                 // ===== OPTION 3: Print roster (sorted) =====
-                // TODO 7: If count is 0, print: "Roster is empty."
+                // If count is 0, print: "Roster is empty."
                 // Otherwise:
                 // - Print:
                 //   Sort by:
@@ -138,7 +137,7 @@ public class Program
                 case 3:
                     if (count == 0)
                     {
-                        Console.WriteLine("Roster is empty.\n");
+                        Console.WriteLine("Roster is empty.");
                         break;
                     }
 
@@ -170,13 +169,18 @@ public class Program
 
                     break;
 
-                    // ===== OPTION 4: Exit =====
-                    // TODO 8: When the user chooses 4, print: "Goodbye." and end the program
-
-                    // TODO 9: Add a blank line between menu actions (but not after Exit)
+                // ===== OPTION 4: Exit =====
+                // When the user chooses 4, print: "Goodbye." and end the program
+                case 4:
+                    Console.WriteLine("Goodbye.");
+                    return;
             }
 
-            Console.WriteLine("(Starter project) Follow the TODO steps in Program.cs.");
+            // Add a blank line between menu actions (but not after Exit)
+            if (choice != 4)
+            {
+                Console.WriteLine();
+            }
         }
     }
 
@@ -196,19 +200,18 @@ public class Program
         return value;
     }
 
-
     private static string[] BuildRosterLines(string[] names, int[] credits, int count)
     {
         // Build and return an array of roster lines
         // - Create a string[] sized to count (hint: initialize with new)
         // - Use a for loop to fill it (hint: use index accessor for the variable you just created)
         // - Include BOTH name and credits on each line
-
         string[] lines = new string[count];
         for (int i = 0; i < count; i++)
         {
             lines[i] = $"{names[i]} {credits[i]} credits";
         }
+
         return lines;
     }
 
@@ -222,7 +225,6 @@ public class Program
         // Copy only the USED roster values into new arrays
         // - Create names and credits arrays sized to count
         // - Use a for loop to copy each used element
-
         names = new string[count];
         credits = new int[count];
         for (int i = 0; i < count; i++)
