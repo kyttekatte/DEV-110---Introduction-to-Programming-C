@@ -95,15 +95,31 @@ public class Program
                         count++;
                     }
 
-                    Console.WriteLine("Students added.");
+                    Console.WriteLine("Students added.\n");
                     break;
 
-                    // ===== OPTION 2: Print class roster =====
-                    // TODO 6: If count is 0, print: "Roster is empty."
-                    // Otherwise:
-                    // - Build a string[] of lines using BuildRosterLines (TODO 6.1)
-                    // - Print header: "Class Roster:"
-                    // - Print each line using a foreach loop
+                // ===== OPTION 2: Print class roster =====
+                // If count is 0, print: "Roster is empty."
+                // Otherwise:
+                // - Build a string[] of lines using BuildRosterLines (TODO 6.1)
+                // - Print header: "Class Roster:"
+                // - Print each line using a foreach loop
+                case 2:
+                    if (count == 0)
+                    {
+                        Console.WriteLine("Roster is empty.\n");
+                        break;
+                    }
+
+                    Console.WriteLine("Class Roster:");
+                    string[] rosterLines = BuildRosterLines(rosterNames, rosterCredits, count);
+
+                    foreach (string line in rosterLines)
+                    {
+                        Console.WriteLine(line);
+                    }
+
+                    break;
 
                     // ===== OPTION 3: Print roster (sorted) =====
                     // TODO 7: If count is 0, print: "Roster is empty."
@@ -149,12 +165,17 @@ public class Program
 
     private static string[] BuildRosterLines(string[] names, int[] credits, int count)
     {
-        // TODO 6.1: Build and return an array of roster lines
+        // Build and return an array of roster lines
         // - Create a string[] sized to count (hint: initialize with new)
         // - Use a for loop to fill it (hint: use index accessor for the variable you just created)
         // - Include BOTH name and credits on each line
 
-        return new string[0]; // Remove this placeholder and replace with the variable to created
+        string[] lines = new string[count];
+        for (int i = 0; i < count; i++)
+        {
+            lines[i] = $"{names[i]} {credits[i]} credits";
+        }
+        return lines;
     }
 
     private static void CopyUsedRoster(
