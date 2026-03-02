@@ -1,6 +1,6 @@
 # Week 7: Class Roster Builder (Arrays) - Study Notes
 
-**Name:**
+**Name:** Kytte Burke
 
 ## Arrays and `count`
 
@@ -36,10 +36,10 @@ Answer:
 **Key takeaways from this week:**
 [3-5 main things you learned]
 
-1.
-2.
-3.
-4.
+1. menus are fun
+2. arrays are useful
+3. keeping track of open/close braces is Very important
+4. it seems to take more time doing these study notes than the actual code
 5.
 
 **Which loop felt most natural to use and why?**
@@ -48,16 +48,16 @@ Answer:
 
 ## Time Spent
 
-**Total time:** [X hours]
+**Total time:** 2.5 hours
 
 **Breakdown:**
 
-- Planning the arrays/menu: [X hours]
-- Input validation: [X hours]
-- Add + print roster features: [X hours]
-- Sorting feature: [X hours]
-- Testing and debugging: [X hours]
-- Writing documentation: [X hours]
+- Planning the arrays/menu: [.25 hours]
+- Input validation: [.25 hours]
+- Add + print roster features: [.5 hours]
+- Sorting feature: [.5 hours]
+- Testing and debugging: [.25 hours]
+- Writing documentation: [.75 hours]
 
 **Most time-consuming part:** [Which aspect took the longest and why?]
 
