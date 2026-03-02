@@ -1,18 +1,18 @@
 # Week 3: Personal Profile Card - Study Notes
 
-**Name:**
+**Name:**  Kytte Burke
 
 ## Understanding Variables and Data Types
 
 **What are the four main data types you used in this assignment?**
 [List string, int, double, and bool - explain what each stores and give examples from your profile card]
 
-Answer:
+Answer: string - alphanumeric: fullName; bool - true/false: isHonorStudent; int - integer literal numbers: age; double - real number values/decimals: gpa
 
 **Why did you use `double` for GPA instead of `int`?**
 [Explain the difference and why decimal precision matters for GPA]
 
-Answer:
+Answer: int doesn't include decimals but double does. we need this because gpas are frequently not whole numbers
 
 **How did you convert the yes/no input into a boolean?**
 [Explain the comparison operation you used]
@@ -24,17 +24,17 @@ Answer:
 **How did you organize the information into logical groups?**
 [Explain why you grouped certain pieces of information together (personal, academic, etc.)]
 
-Answer:
+Answer: details that seemed only about the student went under personal information; school information went under academic details and the calculations went under calculated statistics.  it was a case of like with like
 
 **Which pieces of information did you calculate rather than ask for?**
 [List the derived data: birth year, years to graduation, height conversion, honor status, age in months]
 
-Answer:
+Answer: height in feet/inches; birth year; years to graduation; is honor student; and age in months
 
 **Why is it better to calculate birth year from age rather than ask for both?**
 [Explain data consistency and reducing redundant input]
 
-Answer:
+Answer: if they were both asked for then if there was an update/change it would need to be done in 2 places and could be subject to errors
 
 ## Challenges and Solutions
 
@@ -75,7 +75,7 @@ Answer:
 **How did you format the GPA to show exactly 2 decimal places?**
 [Explain the :F2 format specifier]
 
-Answer:
+Answer: the :F indicates to the program what decimal place is desired with the 2/0/etc defines how many places are displayed
 
 **How did you display different text based on whether someone is full-time or part-time?**
 [Explain the conditional/ternary operator you used]
