@@ -27,7 +27,7 @@ A **Movie Tracker** program that:
 
 ### Step 1: Navigate to the Project
 
-```bash
+```bash 
 cd labs/week-8-classes-debugging/starter
 ```
 

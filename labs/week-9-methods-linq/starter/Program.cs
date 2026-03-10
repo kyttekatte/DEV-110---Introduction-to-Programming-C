@@ -26,6 +26,8 @@ internal class Program
         // Store it in a variable named: movies
         // After that, log how many movies were loaded:
         // Logger.Info($"Loaded {movies.Count} movies.");
+        List<Movie> movies = CreateSeedMovies();
+        Logger.Info($"Loaded {movies.Count} movies.");
 
         // TODO 2: Build the main menu loop
         // Requirements:
@@ -39,6 +41,34 @@ internal class Program
         //   - Use a switch(choice) to call the correct report method
         //   - Quit choice (5) should set running = false
         // ---
+
+        bool running = true;
+        while (running)
+        {
+            Console.WriteLine();
+            PrintMenu();
+            int choice = ReadIntInRange("Choose an option (1-5): ", 1, 5);
+            Console.WriteLine();
+
+            switch (choice)
+            {
+                case 1:
+                    PrintAllMoviesSortedByTitle(movies);
+                    break;
+                case 2:
+                    PrintTopRatedMovies(movies, topCount: 3);
+                    break;
+                case 3:
+                    PrintGenreReport(movies);
+                    break;
+                case 4:
+                    PrintOverallStats(movies);
+                    break;
+                case 5:
+                    running = false;
+                    break;
+            }
+        }
         Console.WriteLine("\nGoodbye!");
     }
 
@@ -76,6 +106,9 @@ internal class Program
     // - Print: $"Total: {movies.Count}" at the end
     private static void PrintAllMoviesSortedByTitle(List<Movie> movies)
     {
+        Logger.Info("Listing all movies (sorted by title)...");
+
+        IEnumerable<Movie> sortedMovies = movies.OrderBy(m => m.Title);
         throw new NotImplementedException();
     }
 

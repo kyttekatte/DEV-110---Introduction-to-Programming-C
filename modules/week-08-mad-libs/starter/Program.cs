@@ -19,7 +19,7 @@ public class Program
         Console.WriteLine("=== Mad Libs: Structure + Debugging ===");
         Console.WriteLine();
 
-        // TODO 1: Implement the main game loop
+        // 1: Implement the main game loop
         // The loop should:
         // - Let player choose a template
         // - Collect words for the template
@@ -53,7 +53,11 @@ public class Program
     // - Return the appropriate StoryTemplate (see template details in README)
     private static StoryTemplate ChooseTemplate()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("Choose a template:");
+        Console.WriteLine("1) Debugging at the Zoo");
+        Console.WriteLine("2) The Standup Meeting");
+        int choice = ReadIntInRange("Enter your choice (1-2): ", 1, 2);
+        return choice == 1 ? new DebuggingAtTheZooTemplate() : new TheStandupMeetingTemplate();
     }
 
     // TODO 3: Implement CollectWords
@@ -91,7 +95,22 @@ public class Program
     // - Return the valid integer
     private static int ReadIntInRange(string prompt, int min, int max)
     {
-        throw new NotImplementedException();
+        int value;
+        bool isValid;
+
+        do
+        {
+            Console.Write(prompt);
+            isValid = int.TryParse(Console.ReadLine(), out value);
+
+            if (!isValid || value < min || value > max)
+            {
+                Console.WriteLine($"Please enter a number from {min} to {max}.");
+            }
+        }
+        while (!isValid || value < min || value > max);
+
+        return value;
     }
 
     // TODO 6: Implement ReadNonEmptyString
