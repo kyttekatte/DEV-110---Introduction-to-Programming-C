@@ -1,6 +1,6 @@
 # Week 8: Mad Libs (Structure + Debugging)
 
-## Summary
+## Summary 
 
 Build a two-template **Mad Libs** console app.
 
