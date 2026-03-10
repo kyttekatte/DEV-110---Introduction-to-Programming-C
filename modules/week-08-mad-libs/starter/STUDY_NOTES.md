@@ -1,6 +1,6 @@
 # Week 8: Mad Libs (Structure + Debugging) - Study Notes
 
-**Name:** replace-with-your-name
+**Name:** Kytte Burke
 
 ## Program Structure
 
