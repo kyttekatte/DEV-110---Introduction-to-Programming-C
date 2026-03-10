@@ -1,6 +1,6 @@
 /*******************************************************************************
 - Course: DEV 110
-- Instructor: Zak Brinlee
+- Instructor: Zak Brinlee 
 - Term: Winter 2026
 -
 - Assignment: Week 8: Mad Libs (Structure + Debugging)
