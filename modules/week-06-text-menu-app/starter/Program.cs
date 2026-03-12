@@ -3,7 +3,7 @@
 - Instructor: Zak Brinlee
 - Term: Winter 2026
 -
-- Programmer: YourName
+- Programmer: Kytte Burke
 - Assignment: Week 6: Text Menu App
 -
 - What does this program do?:
@@ -16,17 +16,25 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        // TODO 1: Build a title banner using strings
+        // 1: Build a title banner using strings
         // Create variables for:
         // - title: "Text Menu Studio"
         // - subtitle: "Strings + Console Output Patterns"
         // - divider: 48 equals signs (hint: use new string() constructor)
         // Display: divider, title in uppercase, subtitle, divider
+        string title = "Text Menu Studio";
+        string subtitle = "Strings + Console Output Patterns";
+        string divider = new string('=', 48);
 
-        int choice = 0;
+        Console.WriteLine(divider);
+        Console.WriteLine(title.ToUpper());
+        Console.WriteLine(subtitle);
+        Console.WriteLine(divider);
 
-        // TODO 2: Create a menu loop that repeats until user chooses 6 (Exit)
+        // 2: Create a menu loop that repeats until user chooses 6 (Exit)
         // Hint: Use a while loop
+        int choice = 0;
+        while (choice != 6)
         {
             // TODO 3: Print the menu box
             // Required menu option texts (tests check for these):
