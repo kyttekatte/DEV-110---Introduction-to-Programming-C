@@ -36,7 +36,7 @@ public class Program
         int choice = 0;
         while (choice != 6)
         {
-            // TODO 3: Print the menu box
+            // 3: Print the menu box
             // Required menu option texts (tests check for these):
             // - 1) Greeting Card
             // - 2) Name Tag Formatter
@@ -44,10 +44,17 @@ public class Program
             // - 4) Fancy Receipt Line
             // - 5) Menu Banner Builder
             // - 6) Exit
+            Console.WriteLine("1) Greeting Card");
+            Console.WriteLine("2) Name Tag Formatter");
+            Console.WriteLine("3) Phrase Analyzer");
+            Console.WriteLine("4) Fancy Receipt Line");
+            Console.WriteLine("5) Menu Banner Builder");
+            Console.WriteLine("6) Exit");
 
-            // TODO 4: Get menu choice from user
+            // 4: Get menu choice from user
             // Use ReadIntInRange helper with prompt: "Choose an option (1-6): "
             // Range: 1 to 6
+            choice = ReadIntInRange("Choose an option (1-6): ", 1, 6);
 
             // TODO 5: Use a switch statement to handle each menu option
 
@@ -121,12 +128,23 @@ public class Program
 
     private static int ReadIntInRange(string prompt, int min, int max)
     {
-        // TODO 7: Implement input validation
+        // 7: Implement input validation
         // Use a do-while loop with int.TryParse()
         // Keep prompting until input is valid AND within range
         // Return the valid number
-
-        return min; // Remove this placeholder
+        do
+        {
+            Console.Write(prompt);
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out int number))
+            {
+                if (number >= min && number <= max)
+                {
+                    return number;
+                }
+            }
+            Console.WriteLine($"Please enter a valid number between {min} and {max}.");
+        } while (true);
     }
 
     private static double ReadDouble(string prompt)
