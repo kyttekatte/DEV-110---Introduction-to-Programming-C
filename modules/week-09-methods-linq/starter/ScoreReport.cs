@@ -69,7 +69,7 @@ internal class ScoreReport
         Console.WriteLine($"Count: {_scores.Length}");
         Console.WriteLine($"Min: {min}");
         Console.WriteLine($"Max: {max}");
-        Console.WriteLine($"Average: {average:F1}");
+        Console.WriteLine($"Average: {average.ToString("0.0", CultureInfo.InvariantCulture)}");
     }
 
     // 3: Implement PrintPassingFailingCounts
@@ -95,7 +95,7 @@ internal class ScoreReport
     // - Print exactly: Sorted (asc): 10, 20, 30
     private void PrintScoresSorted()
     {
-        var sorted = _scores.OrderBy(score => score);
+        IOrderedEnumerable<int> sorted = _scores.OrderBy(score => score);
         Console.WriteLine($"Sorted (asc): {string.Join(", ", sorted)}");
     }
 
@@ -106,7 +106,7 @@ internal class ScoreReport
     // - Print exactly: Top X: 30, 20, 10
     private void PrintTopScores(int topCount)
     {
-        var top = _scores.OrderByDescending(score => score).Take(topCount);
+        IEnumerable<int> top = _scores.OrderByDescending(score => score).Take(topCount);
         Console.WriteLine($"Top {topCount}: {string.Join(", ", top)}");
     }
 
@@ -123,7 +123,7 @@ internal class ScoreReport
         Console.WriteLine($"Passing scores (desc): {string.Join(", ", passingScores)}");
     }
 
-    // TODO 7: Implement PrintFailingScores
+    // 7: Implement PrintFailingScores
     // Requirements:
     // - Chain: _scores.Where(score => score < Threshold).OrderByDescending(score => score)
     // - Use string.Join(", ", failingScores) to format
