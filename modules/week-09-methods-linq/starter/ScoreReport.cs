@@ -46,7 +46,7 @@ internal class ScoreReport
         Console.WriteLine();
         PrintScoresSorted();
         PrintTopScores(3);
-        //PrintPassingScores();
+        PrintPassingScores();
         //PrintFailingScores();
     }
 
@@ -99,7 +99,7 @@ internal class ScoreReport
         Console.WriteLine($"Sorted (asc): {string.Join(", ", sorted)}");
     }
 
-    // TODO 5: Implement PrintTopScores
+    // 5: Implement PrintTopScores
     // Requirements:
     // - Chain: _scores.OrderByDescending(score => score).Take(topCount)
     // - Use string.Join(", ", top) to format
@@ -117,7 +117,10 @@ internal class ScoreReport
     // - Print exactly: Passing scores (desc): 30, 20
     private void PrintPassingScores()
     {
-        throw new NotImplementedException();
+        List<int> passingScores = _scores.Where(score => score >= Threshold)
+                                          .OrderByDescending(score => score)
+                                          .ToList();
+        Console.WriteLine($"Passing scores (desc): {string.Join(", ", passingScores)}");
     }
 
     // TODO 7: Implement PrintFailingScores
