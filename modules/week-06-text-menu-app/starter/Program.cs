@@ -96,7 +96,7 @@ public class Program
                     string firstName = Console.ReadLine().Trim();
                     Console.Write("Enter last name: ");
                     string lastName = Console.ReadLine().Trim();
-                    
+
                     string fullName = firstName + " " + lastName;
                     string initials = firstName[0].ToString().ToUpper() + lastName[0].ToString().ToUpper();
                     string lowercaseName = fullName.ToLower();
@@ -117,6 +117,19 @@ public class Program
                     // - Use Split() to break into words
                     // - Use string.Join() to create comma-separated list
                     // Display: length, contains check, dashed version, and words list
+                    Console.Write("Enter a phrase: ");
+                    string phrase = Console.ReadLine().Trim();
+                    int length = phrase.Length;
+                    bool containsA = phrase.ToLower().Contains('a');
+                    string dashedVersion = phrase.Replace(' ', '-');
+                    string[] words = phrase.Split(' ');
+                    string wordsList = string.Join(", ", words);
+
+                    Console.WriteLine();
+                    Console.WriteLine($"Length: {length}");
+                    Console.WriteLine($"Contains 'a': {containsA}");
+                    Console.WriteLine($"Dashed Version: {dashedVersion}");
+                    Console.WriteLine($"Words List: {wordsList}");
                     break;
                 case 4:
                     // ===== OPTION 4: Fancy Receipt Line =====
