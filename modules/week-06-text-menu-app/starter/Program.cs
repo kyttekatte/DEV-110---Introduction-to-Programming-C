@@ -185,6 +185,14 @@ public class Program
                     // - Use IndexOf() to find position of space character
                     // Display the results of all four operations
                     // Then print: "Goodbye!"
+                    Console.Write("Enter a closing word: ");
+                    string closingWord = Console.ReadLine().Trim();
+                    bool isGoodbye = closingWord.Equals("goodbye", StringComparison.OrdinalIgnoreCase);
+                    string firstThree = closingWord.Length >= 3 ? closingWord.Substring(0, 3) : closingWord;
+                    bool endsWithExclamation = closingWord.EndsWith("!", StringComparison.Ordinal);
+                    int spaceIndex = closingWord.IndexOf(" ");
+                    Console.WriteLine($"Is 'goodbye': {isGoodbye} | First 3: {firstThree} | Has '!': {endsWithExclamation} | Space at: {spaceIndex}");
+                    Console.WriteLine("Goodbye!");
                     break;
             }
 
