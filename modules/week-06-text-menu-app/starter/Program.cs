@@ -56,7 +56,7 @@ public class Program
             // Range: 1 to 6
             choice = ReadIntInRange("Choose an option (1-6): ", 1, 6);
 
-            // TODO 5: Use a switch statement to handle each menu option
+            // 5: Use a switch statement to handle each menu option
             switch (choice)
             {
                 case 1:
@@ -168,11 +168,15 @@ public class Program
                     string border = new string('=', width);
                     int leftPadTitle = (width - bannerTitle.Length) / 2;
                     int leftPadSubtitle = (width - bannerSubtitle.Length) / 2;
-                    string centeredTitle = bannerTitle.PadLeft(leftPadTitle).PadRight(width);
-                    string centeredSubtitle = bannerSubtitle.PadLeft(leftPadSubtitle).PadRight(width);
+                    string centeredTitle = bannerTitle.PadLeft((width - bannerTitle.Length) / 2).PadRight(width);
+                    string centeredSubtitle = bannerSubtitle.PadLeft((width - bannerSubtitle.Length) / 2).PadRight(width);
                     Console.WriteLine(border);
-                    Console.WriteLine(centeredTitle);
-                    Console.WriteLine(centeredSubtitle);
+                    Console.WriteLine($"Centered Title:{centeredTitle}");
+                    Console.WriteLine($"Centered Subtitle:{centeredSubtitle}");
+                    Console.WriteLine($"Left Title:{bannerTitle.PadLeft(width)}");
+                    Console.WriteLine($"Left Subtitle:{bannerSubtitle.PadLeft(width)}");
+                    Console.WriteLine($"Right Title:{bannerTitle.PadRight(width)}");
+                    Console.WriteLine($"Right Subtitle:{bannerSubtitle.PadRight(width)}");
                     Console.WriteLine(border);
                     break;
                 case 6:
@@ -196,7 +200,7 @@ public class Program
                     break;
             }
 
-            // TODO 6: Add a blank line between menu actions (but not after Exit)
+            // 6: Add a blank line between menu actions (but not after Exit)
             if (choice != 6)
             {
                 Console.WriteLine(); // Blank line for spacing
@@ -218,7 +222,8 @@ public class Program
             Console.Write(prompt);
             string input = Console.ReadLine();
             isValid = int.TryParse(input, out value);
-        } while (!isValid || value < min || value > max);
+        }
+        while (!isValid || value < min || value > max);
 
         return value;
     }
@@ -237,7 +242,8 @@ public class Program
             Console.Write(prompt);
             string input = Console.ReadLine();
             isValid = double.TryParse(input, out value);
-        } while (!isValid);
+        }
+        while (!isValid);
 
         return value;
     }
