@@ -141,6 +141,14 @@ public class Program
                     // - Use string.Format() with composite formatting for the data row
                     // - Use alignment specifiers (left/right alignment)
                     // - Use currency format specifier (:C2) for the total
+                    Console.Write("Enter item name: ");
+                    string itemName = Console.ReadLine().Trim();
+                    double price = ReadDouble("Enter price: ");
+                    int quantity = ReadIntInRange("Enter quantity (1-9): ", 1, 9);
+                    double total = price * quantity;
+                    Console.WriteLine();
+                    Console.WriteLine(string.Format("{0,-20} {1,5} {2,10}", "ITEM", "QTY", "TOTAL"));
+                    Console.WriteLine(string.Format("{0,-20} {1,5} {2,10:C2}", itemName, quantity, total));
                     break;
                 case 5:
                     // ===== OPTION 5: Menu Banner Builder =====
@@ -152,6 +160,20 @@ public class Program
                     // - Use ToUpper() on title
                     // - Display banner with borders and centered text
                     // - Show three alignment examples (centered, left, right)
+                    Console.Write("Enter a title: ");
+                    string bannerTitle = Console.ReadLine().Trim().ToUpper();
+                    Console.Write("Enter a subtitle: ");
+                    string bannerSubtitle = Console.ReadLine().Trim();
+                    int width = ReadIntInRange("Enter width (30-60): ", 30, 60);
+                    string border = new string('=', width);
+                    int leftPadTitle = (width - bannerTitle.Length) / 2;
+                    int leftPadSubtitle = (width - bannerSubtitle.Length) / 2;
+                    string centeredTitle = bannerTitle.PadLeft(leftPadTitle).PadRight(width);
+                    string centeredSubtitle = bannerSubtitle.PadLeft(leftPadSubtitle).PadRight(width);
+                    Console.WriteLine(border);
+                    Console.WriteLine(centeredTitle);
+                    Console.WriteLine(centeredSubtitle);
+                    Console.WriteLine(border);
                     break;
                 case 6:
                     // ===== OPTION 6: Exit with String Analysis =====
@@ -180,28 +202,35 @@ public class Program
         // Use a do-while loop with int.TryParse()
         // Keep prompting until input is valid AND within range
         // Return the valid number
+        int value;
+        bool isValid;
+
         do
         {
             Console.Write(prompt);
             string input = Console.ReadLine();
-            if (int.TryParse(input, out int number))
-            {
-                if (number >= min && number <= max)
-                {
-                    return number;
-                }
-            }
-            Console.WriteLine($"Please enter a valid number between {min} and {max}.");
-        } while (true);
+            isValid = int.TryParse(input, out value);
+        } while (!isValid || value < min || value > max);
+
+        return value;
     }
 
     private static double ReadDouble(string prompt)
     {
-        // TODO 8: Implement input validation
+        // 8: Implement input validation
         // Use a do-while loop with double.TryParse()
         // Keep prompting until input is a valid number
         // Return the valid number
+        double value;
+        bool isValid;
 
-        return 0; // Remove this placeholder
+        do
+        {
+            Console.Write(prompt);
+            string input = Console.ReadLine();
+            isValid = double.TryParse(input, out value);
+        } while (!isValid);
+
+        return value;
     }
 }
