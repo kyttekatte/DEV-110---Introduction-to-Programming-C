@@ -29,7 +29,7 @@ internal class ScoreReport
 
     public int Count => _scores.Length;
 
-    // TODO 1: Implement PrintReport
+    // 1: Implement PrintReport
     // This method orchestrates printing the full report.
     // Requirements:
     // - Call PrintBasicStats()
@@ -41,7 +41,13 @@ internal class ScoreReport
     // - Call PrintFailingScores()
     public void PrintReport()
     {
-        throw new NotImplementedException();
+        PrintBasicStats();
+        PrintPassingFailingCounts();
+        Console.WriteLine();
+        PrintScoresSorted();
+        PrintTopScores(3);
+        PrintPassingScores();
+        PrintFailingScores();
     }
 
     // TODO 2: Implement PrintBasicStats
