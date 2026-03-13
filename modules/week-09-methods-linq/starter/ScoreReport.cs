@@ -44,7 +44,7 @@ internal class ScoreReport
         PrintBasicStats();
         PrintPassingFailingCounts();
         Console.WriteLine();
-        //PrintScoresSorted();
+        PrintScoresSorted();
         //PrintTopScores(3);
         //PrintPassingScores();
         //PrintFailingScores();
@@ -72,7 +72,7 @@ internal class ScoreReport
         Console.WriteLine($"Average: {average:F1}");
     }
 
-    // TODO 3: Implement PrintPassingFailingCounts
+    // 3: Implement PrintPassingFailingCounts
     // Requirements:
     // - Use _scores.Count(score => score >= Threshold) for passing count
     // - Use _scores.Count(score => score < Threshold) for failing count
@@ -95,7 +95,8 @@ internal class ScoreReport
     // - Print exactly: Sorted (asc): 10, 20, 30
     private void PrintScoresSorted()
     {
-        throw new NotImplementedException();
+        var sorted = _scores.OrderBy(score => score);
+        Console.WriteLine($"Sorted (asc): {string.Join(", ", sorted)}");
     }
 
     // TODO 5: Implement PrintTopScores
