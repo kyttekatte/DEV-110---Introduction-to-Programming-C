@@ -72,7 +72,7 @@ public class Program
                     Console.Write("Enter your name: ");
                     string name = Console.ReadLine().Trim().ToUpper();
                     Console.Write("Enter a short message: ");
-                    string message = Console.ReadLine().Trim().ToUpper();
+                    string message = Console.ReadLine().Trim();
                     Console.WriteLine();
                     Console.WriteLine(divider);
                     Console.WriteLine($"Hello, {name}!");
@@ -92,6 +92,19 @@ public class Program
                     // - Name tag with the full name (include a bracket [)
                     // - Initials (use word "Initials:" in label)
                     // - Lowercase version (use word "Lowercase:" in label)
+                    Console.Write("Enter first name: ");
+                    string firstName = Console.ReadLine().Trim();
+                    Console.Write("Enter last name: ");
+                    string lastName = Console.ReadLine().Trim();
+                    
+                    string fullName = firstName + " " + lastName;
+                    string initials = firstName[0].ToString().ToUpper() + lastName[0].ToString().ToUpper();
+                    string lowercaseName = fullName.ToLower();
+
+                    Console.WriteLine();
+                    Console.WriteLine($"Name Tag: [{fullName}]");
+                    Console.WriteLine($"Initials: {initials}");
+                    Console.WriteLine($"Lowercase: {lowercaseName}");
                     break;
                 case 3:
                     // ===== OPTION 3: Phrase Analyzer =====
