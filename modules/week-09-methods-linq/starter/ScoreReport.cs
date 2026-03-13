@@ -42,15 +42,15 @@ internal class ScoreReport
     public void PrintReport()
     {
         PrintBasicStats();
-        PrintPassingFailingCounts();
+        //PrintPassingFailingCounts();
         Console.WriteLine();
-        PrintScoresSorted();
-        PrintTopScores(3);
-        PrintPassingScores();
-        PrintFailingScores();
+        //PrintScoresSorted();
+        //PrintTopScores(3);
+        //PrintPassingScores();
+        //PrintFailingScores();
     }
 
-    // TODO 2: Implement PrintBasicStats
+    // 2: Implement PrintBasicStats
     // Requirements:
     // - Use _scores.Min() to get the minimum score
     // - Use _scores.Max() to get the maximum score
@@ -62,7 +62,14 @@ internal class ScoreReport
     //   Average: X.X  (format to 1 decimal place using CultureInfo.InvariantCulture)
     private void PrintBasicStats()
     {
-        throw new NotImplementedException();
+        int min = _scores.Min();
+        int max = _scores.Max();
+        double average = _scores.Average();
+
+        Console.WriteLine($"Count: {_scores.Length}");
+        Console.WriteLine($"Min: {min}");
+        Console.WriteLine($"Max: {max}");
+        Console.WriteLine($"Average: {average:F1}");
     }
 
     // TODO 3: Implement PrintPassingFailingCounts
