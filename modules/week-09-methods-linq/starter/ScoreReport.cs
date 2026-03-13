@@ -3,7 +3,7 @@
 - Instructor: Zak Brinlee
 - Term: Winter 2026
 -
-- Programmer: YourName
+- Programmer: Kytte Burke
 - Assignment: Week 9: Score Stats (Methods + LINQ)
 -
 - What does this program do?:
@@ -47,7 +47,7 @@ internal class ScoreReport
         PrintScoresSorted();
         PrintTopScores(3);
         PrintPassingScores();
-        //PrintFailingScores();
+        PrintFailingScores();
     }
 
     // 2: Implement PrintBasicStats
@@ -110,7 +110,7 @@ internal class ScoreReport
         Console.WriteLine($"Top {topCount}: {string.Join(", ", top)}");
     }
 
-    // TODO 6: Implement PrintPassingScores
+    // 6: Implement PrintPassingScores
     // Requirements:
     // - Chain: _scores.Where(score => score >= Threshold).OrderByDescending(score => score)
     // - Use string.Join(", ", passingScores) to format
@@ -130,6 +130,9 @@ internal class ScoreReport
     // - Print exactly: Failing scores (desc): 10
     private void PrintFailingScores()
     {
-        throw new NotImplementedException();
+        List<int> failingScores = _scores.Where(score => score < Threshold)
+                                          .OrderByDescending(score => score)
+                                          .ToList();
+        Console.WriteLine($"Failing scores (desc): {string.Join(", ", failingScores)}");
     }
 }
