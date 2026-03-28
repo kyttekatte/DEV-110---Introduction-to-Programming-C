@@ -1,4 +1,4 @@
-﻿/*******************************************************************************
+/*******************************************************************************
  * Course: DEV 110
  * Instructor: Zak Brinlee
  * Term: Winter 2026
@@ -10,3 +10,106 @@
  * A menu-driven Games Tracker that loads games from a CSV file and lets you
  * view, add/save, and delete your games back to disk.
  * ******************************************************************************/
+namespace MyGames;
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Welcome to My Games Tracker!");
+
+        string filePath = "games.csv";
+        List<Game> games = new List<Game>();
+
+        // Check for existing file and load games
+        if (File.Exists(filePath))
+        {
+            games = LoadGames(filePath);
+            Console.WriteLine($"Loaded {games.Count} games from {filePath}.");
+        }
+        else
+        {
+            Console.WriteLine($"No {filePath} found");
+        }
+
+        bool running = true;
+        while (running)
+        {
+            PrintMenu();
+
+            string input = Console.ReadLine() ?? "";
+            Console.WriteLine();
+
+            switch (input.Trim())
+            {
+                case "1":
+                    ViewAllGames(games);
+                    break;
+                case "2":
+                    AddGame(filePath,games);
+                    break;
+                case "3":
+                    DeleteGame(filePath,games);
+                    break;
+                case "4":
+                    running = false;
+                    break;
+                default:
+                    Console.WriteLine("Invalid option. Please choose 1-4.");
+                    break;
+            }
+        }
+
+        Console.WriteLine("Goodbye!");
+    }
+
+    private static void PrintMenu()
+    {
+        Console.WriteLine("\nMenu:");
+        Console.WriteLine("1. View All Games");
+        Console.WriteLine("2. Add a Game");
+        Console.WriteLine("3. Delete a Game");
+        Console.WriteLine("4. Exit");
+        Console.Write("Choose an option (1-4): ");
+    }
+
+    private static List<Game> LoadGames(string filePath)
+    {
+        List<Game> games = new List<Game>();
+        string[] lines = File.ReadAllLines(filePath);
+
+        foreach (string line in lines)
+        {
+            if (!string.IsNullOrWhiteSpace(line))
+            {
+                games.Add(Game.Parse(line));
+            }
+        }
+        return games;
+    }
+
+    private static void ViewAllGames(List<Game> games)
+    {}
+
+    private static void AddGame(string filePath, List<Game> games)
+    { }
+    private static void DeleteGame(string filePath, List<Game> games)
+    { }
+
+    private static string ReadNonEmptyString(string prompt)
+    {
+        while (true)
+        {
+            Console.Write(prompt);
+            string input = (Console.ReadLine() ?? string.Empty).Trim();
+
+            if (!string.IsNullOrWhiteSpace(input))
+            {
+                return input;
+            }
+        }
+    }
+
+
+
+}
