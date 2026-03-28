@@ -109,9 +109,47 @@ internal class Program
     }
 
     private static void AddGame(string filePath, List<Game> games)
-    { }
+    {
+        Console.WriteLine("\n--- Add a New Game ---");
+
+        string gameName = ReadNonEmptyString("Enter game name: ");
+        string gameCategory = ReadNonEmptyString("Enter game category: ");
+
+        games.Add(new Game(gameName, gameCategory));
+        SaveGame(filePath, games);
+        Console.WriteLine($"Game '{gameName}' added successfully!  You now have {games.Count} games in your collection.");
+    }
     private static void DeleteGame(string filePath, List<Game> games)
-    { }
+    {
+        if (games.Count == 0)
+        {
+            Console.WriteLine("No games to delete. Use option 2 to add some!");
+            return;
+        }
+
+        ViewAllGames(games);
+        Console.Write("\nEnter the number of the game to delete: ");
+        string input = Console.ReadLine() ?? "";
+
+        if (int.TryParse(input.Trim(), out int index) && index >= 1 && index <= games.Count)
+        {
+            Game removedGame = games[index - 1];
+            games.RemoveAt(index - 1);
+            SaveGame(filePath, games);
+            Console.WriteLine($"Game '{removedGame.GameName}' deleted successfully! You now have {games.Count} games in your collection.");
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid game number.");
+        }
+    }
+
+    private static void SaveGame(string filePath, List<Game> games)
+    {
+        string[] lines = games.Select(g => g.ToCSV()).ToArray();
+        File.WriteAllLines(filePath, lines);
+    }
+
 
     private static string ReadNonEmptyString(string prompt)
     {
