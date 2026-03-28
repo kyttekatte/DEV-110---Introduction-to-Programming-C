@@ -37,7 +37,7 @@ internal class Program
         {
             PrintMenu();
 
-            string input = Console.ReadLine() ?? "";
+            string input = Console.ReadLine() ?? string.Empty;
             Console.WriteLine();
 
             switch (input.Trim())
@@ -46,10 +46,10 @@ internal class Program
                     ViewAllGames(games);
                     break;
                 case "2":
-                    AddGame(filePath,games);
+                    AddGame(filePath, games);
                     break;
                 case "3":
-                    DeleteGame(filePath,games);
+                    DeleteGame(filePath, games);
                     break;
                 case "4":
                     running = false;
@@ -85,6 +85,7 @@ internal class Program
                 games.Add(Game.Parse(line));
             }
         }
+
         return games;
     }
 
@@ -97,7 +98,7 @@ internal class Program
         }
 
         Console.WriteLine("Your Games:");
-        Console.WriteLine($"{ "Name",-32} {"Category",-30}");
+        Console.WriteLine($"{"Name",-32} {"Category",-30}");
         Console.WriteLine(new string('-', 55));
 
         for (int i = 0; i < games.Count; i++)
@@ -119,6 +120,7 @@ internal class Program
         SaveGame(filePath, games);
         Console.WriteLine($"Game '{gameName}' added successfully!  You now have {games.Count} games in your collection.");
     }
+
     private static void DeleteGame(string filePath, List<Game> games)
     {
         if (games.Count == 0)
@@ -129,7 +131,7 @@ internal class Program
 
         ViewAllGames(games);
         Console.Write("\nEnter the number of the game to delete: ");
-        string input = Console.ReadLine() ?? "";
+        string input = Console.ReadLine() ?? string.Empty;
 
         if (int.TryParse(input.Trim(), out int index) && index >= 1 && index <= games.Count)
         {
@@ -150,7 +152,6 @@ internal class Program
         File.WriteAllLines(filePath, lines);
     }
 
-
     private static string ReadNonEmptyString(string prompt)
     {
         while (true)
@@ -164,7 +165,4 @@ internal class Program
             }
         }
     }
-
-
-
 }

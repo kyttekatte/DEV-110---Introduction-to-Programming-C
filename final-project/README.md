@@ -150,8 +150,10 @@ Your app must clearly demonstrate **all 8** of the following:
 _Fill out this section before submitting. Write in your own words — a few sentences per prompt is enough._
 
 **Name:**
+Kytte Burke
 
 **App Name:**
+My Games App
 
 ---
 
@@ -176,20 +178,28 @@ Answer:
 _For each concept below, write one sentence describing where it appears in your code._
 
 **Variables & data types:**
+`string`, `int`, `bool` throughout
 
 **If/else decisions:**
+Empty-list guards, `File.Exists` branch
 
 **Loops:**
+Menu `while` loop
 
 **Formatted string output:**
+ `PadRight` games table
 
 **Array or List:**
+`List<Game>` — game inventory
 
 **Custom class:**
+`Game.cs` — `GameName`, `GameCategory`, `ToCSV()`, `Parse()`
 
 **Named methods:**
+'#' methods beyond `Main`
 
 **File I/O:**
+`LoadGames()` reads CSV, `SaveGames()` writes CSV
 
 ---
 
