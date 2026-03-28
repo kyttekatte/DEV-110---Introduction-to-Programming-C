@@ -89,7 +89,24 @@ internal class Program
     }
 
     private static void ViewAllGames(List<Game> games)
-    {}
+    {
+        if (games.Count == 0)
+        {
+            Console.WriteLine("No games to display. Use option 2 to add some!");
+            return;
+        }
+
+        Console.WriteLine("Your Games:");
+        Console.WriteLine($"{ "Name",-32} {"Category",-30}");
+        Console.WriteLine(new string('-', 55));
+
+        for (int i = 0; i < games.Count; i++)
+        {
+            Console.WriteLine($"{i + 1} {games[i].GameName,-32} {games[i].GameCategory,-30}");
+        }
+
+        Console.WriteLine($"\nTotal Games: {games.Count}");
+    }
 
     private static void AddGame(string filePath, List<Game> games)
     { }
