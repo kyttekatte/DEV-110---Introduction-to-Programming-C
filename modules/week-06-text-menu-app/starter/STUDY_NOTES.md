@@ -1,6 +1,6 @@
 # Week 6: Text Menu App - Study Notes
 
-**Name:**
+**Name:** Kytte Burke
 
 ## Loop Types
 
@@ -63,9 +63,9 @@ Answer:
 **Key takeaways from this week:**
 [3-5 main things you learned]
 
-1.
-2.
-3.
+1. How to use string formatting
+2. building menus/banners/etc are hard
+3. testing can seem to take forever
 4.
 5.
 
@@ -75,15 +75,15 @@ Answer:
 
 ## Time Spent
 
-**Total time:** [X hours]
+**Total time:** 6.5 hours
 
 **Breakdown:**
 
-- Planning the loops: [X hours]
-- Input validation: [X hours]
-- String formatting: [X hours]
-- Testing and debugging: [X hours]
-- Writing documentation: [X hours]
+- Planning the loops: [.5 hours]
+- Input validation: [.5 hours]
+- String formatting: [3 hours]
+- Testing and debugging: [2 hours]
+- Writing documentation: [.5 hours]
 
 **Most time-consuming part:** [Which aspect took the longest and why?]
 
