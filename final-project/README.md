@@ -150,8 +150,10 @@ Your app must clearly demonstrate **all 8** of the following:
 _Fill out this section before submitting. Write in your own words — a few sentences per prompt is enough._
 
 **Name:**
+Kytte Burke
 
 **App Name:**
+My Games App
 
 ---
 
@@ -159,7 +161,7 @@ _Fill out this section before submitting. Write in your own words — a few sent
 
 _Describe your app in 1–3 sentences. What does it do? Who might use it?_
 
-Answer:
+Answer: A menu-driven Games Tracker that loads games from a CSV file and lets you view, add/save, and delete your games back to disk. People with a game collection would use this.
 
 ---
 
@@ -167,7 +169,7 @@ Answer:
 
 _Why did this app interest you? What made it feel like a good fit for what you know?_
 
-Answer:
+Answer: I am have to get together a list of my games to give to friends who will be coming over to game.
 
 ---
 
@@ -176,20 +178,28 @@ Answer:
 _For each concept below, write one sentence describing where it appears in your code._
 
 **Variables & data types:**
+`string`, `int`, `bool` throughout
 
 **If/else decisions:**
+Empty-list guards, `File.Exists` branch
 
 **Loops:**
+Menu `while` loop
 
 **Formatted string output:**
+`PadRight` games table
 
 **Array or List:**
+`List<Game>` — game inventory
 
 **Custom class:**
+`Game.cs` — `GameName`, `GameCategory`, `ToCSV()`, `Parse()`
 
 **Named methods:**
+9 methods beyond `Main`
 
 **File I/O:**
+`LoadGames()` reads CSV, `SaveGames()` writes CSV
 
 ---
 
@@ -197,7 +207,13 @@ _For each concept below, write one sentence describing where it appears in your 
 
 _What part of the project was hardest? How did you work through it?_
 
-Answer:
+Answer: The hardest part for me was two-fold:
+
+1. deciding on a project
+2. narrowing scope/preventing scope creep
+
+To work through I just kept trying to keep myself on track by telling myself to work on this bit now
+and then we can do the next and by referencing the Flashcard Quiz demo for scope terms.
 
 ---
 
@@ -205,7 +221,7 @@ Answer:
 
 _If you had more time, what would you change, add, or improve?_
 
-Answer:
+Answer: With more time I would add a bunch of features and other game information into the list. Features I would like to add include: adding player count and other stats; searching for a game by a player count/genre/etc; picking random game; and more.
 
 ---
 
@@ -215,8 +231,8 @@ _Roughly how many hours did you spend total? Give a short breakdown._
 
 | Task                  | Time |
 | --------------------- | ---- |
-| Planning / DATA_MODEL |      |
-| Writing code          |      |
-| Debugging             |      |
-| Reflection / README   |      |
-| **Total**             |      |
+| Planning / DATA_MODEL | 2    |
+| Writing code          | 4.5  |
+| Debugging             | .5   |
+| Reflection / README   | 1    |
+| **Total**             | 8    |
