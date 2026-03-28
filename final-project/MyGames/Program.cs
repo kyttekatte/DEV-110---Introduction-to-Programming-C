@@ -117,7 +117,7 @@ internal class Program
         string gameCategory = ReadNonEmptyString("Enter game category: ");
 
         games.Add(new Game(gameName, gameCategory));
-        SaveGame(filePath, games);
+        SaveGames(filePath, games);
         Console.WriteLine($"Game '{gameName}' added successfully!  You now have {games.Count} games in your collection.");
     }
 
@@ -137,7 +137,7 @@ internal class Program
         {
             Game removedGame = games[index - 1];
             games.RemoveAt(index - 1);
-            SaveGame(filePath, games);
+            SaveGames(filePath, games);
             Console.WriteLine($"Game '{removedGame.GameName}' deleted successfully! You now have {games.Count} games in your collection.");
         }
         else
@@ -146,7 +146,7 @@ internal class Program
         }
     }
 
-    private static void SaveGame(string filePath, List<Game> games)
+    private static void SaveGames(string filePath, List<Game> games)
     {
         string[] lines = games.Select(g => g.ToCSV()).ToArray();
         File.WriteAllLines(filePath, lines);
