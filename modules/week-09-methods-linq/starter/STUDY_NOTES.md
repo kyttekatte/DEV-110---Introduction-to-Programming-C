@@ -31,10 +31,10 @@ Answer:
 **Key takeaways from this week:**
 [3-5 main things you learned]
 
-1.
-2.
-3.
-4.
+1. LINQ methods are eloquent and efficient
+2. methods in general are helpful
+3. I need to comment and commit better
+4. tests fail for all kinds of reasons
 5.
 
 **Which concept felt easiest (methods or LINQ) and why?**
@@ -43,15 +43,15 @@ Answer:
 
 ## Time Spent
 
-**Total time:** X hours
+**Total time:** 3 hours
 
 **Breakdown:**
 
-- Understanding the starter code: X hours
-- Implementing the print methods: X hours
-- LINQ method chaining: X hours
-- Testing and debugging: X hours
-- Writing documentation: X hours
+- Understanding the starter code: .5 hours
+- Implementing the print methods: .5 hours
+- LINQ method chaining: 1 hours
+- Testing and debugging: .5 hours
+- Writing documentation: .5 hours
 
 **Most time-consuming part:** [Which aspect took the longest and why?]
 
